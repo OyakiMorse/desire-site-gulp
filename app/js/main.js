@@ -10,3 +10,12 @@ rightMenuClose.addEventListener('click', () => {
     rightsideMenu.classList.add('rightside-menu--close')
 })
 
+const mixer = mixitup('.gallery__inner', {
+    load: {
+        filter: '.bedroom'
+    },
+    animation: {
+        easing: 'ease-in-out'
+
+    }
+});

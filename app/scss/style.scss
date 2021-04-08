@@ -16,6 +16,8 @@
     border: none;
     padding: 0;
     cursor: pointer;
+    outline: none;
+    width: 1.8rem;
   }
 }
 
@@ -165,17 +167,21 @@
 }
 
 .rightside-menu {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   top: 0;
-  width: 100%;
+  width: 40vw;
   z-index: 100;
   max-width: 700px;
   background-color: #fff;
-  padding-top: 3.12rem;
+  padding-top: 3rem;
   box-shadow: -3px 4px 8px -5px rgba(34, 60, 80, 0.2);
   transition: all 0.3s ease-in;
+  @media screen and (max-width: 1366px) {
+    padding: 1.12rem 0 4rem 0;
+  }
+  overflow: hidden;
   &.rightside-menu--close {
     transform: translateX(150%);
   }
@@ -194,7 +200,7 @@
     margin: 0 auto;
   }
   &__logo {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     display: inline-block;
   }
   &__title {
@@ -219,58 +225,386 @@
     }
   }
   &__text {
-    margin-bottom: 4.6rem;
+    margin-bottom: 1.6rem;
   }
   &__images {
-    max-width: 490px;
-    max-height: 490px;
+    max-width: 100%;
+    object-fit: cover;
 
-    height: 70%;
+    @media screen and (max-width: 1366px) {
+      width: 100%;
+      height: 50vh;
+      object-fit: contain;
+    }
   }
 }
 
 .top {
-
-  &__inner {
+  hr {
+    width: 100%;
+    border: 1px solid $defaultClr;
   }
-
-  &__slider {
+  &__inner {
+    padding-bottom: 4rem;
+    position: relative;
+    @media screen and (max-width: 1366px) {
+      padding: 0 10rem 4rem 10rem;
+    }
+    &::after {
+      content: "";
+      background-image: url(../images/mainBg.jpg);
+      width: 100%;
+      height: 44rem;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      position: absolute;
+      @media screen and (max-width: 1366px) {
+        height: 34rem;
+      }
+    }
   }
 
   &__slider-item {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
   }
 
   &__slider-img {
+    margin-left: -15%;
+    max-width: 43rem;
+    max-height: 50rem;
+    object-fit: cover;
+    @media screen and (max-width: 1366px) {
+      margin-left: -5%;
+      width: 50%;
+    }
   }
 
   &__slider-info {
+    max-width: 40rem;
+    margin-left: 0.6rem;
   }
 
   &__slider-title {
+    @extend %title-font;
     color: $blackClr;
-    font-size : 6.8rem;
+    font-size: 6.8rem;
     line-height: 8.4rem;
     padding-bottom: 1.2rem;
     margin-bottom: 1.2rem;
     position: relative;
     &::after {
-       content: '';
-       position: absolute;
-       left: 0;
-       width: 185px;
-       background: #6d7278;
-       bottom: 0;
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 185px;
+      background: #6d7278;
+      bottom: 0;
     }
   }
 
   &__slider-text {
+    max-width: 36rem;
   }
 }
 
+.new-collection {
+  text-align: center;
+  padding: 2.8rem 0 6.5rem;
 
+  &__title {
+    @extend %title-font;
+    color: $blackClr;
+    font-size: 2.25rem;
+    line-height: 3.12rem;
+    margin-bottom: 1.56rem;
+    padding-bottom: 1.56rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 15.6rem;
+      background: $blackClr;
+    }
+  }
 
+  &__text {
+    max-width: 45.6rem;
+    margin: 0 auto 2.8rem;
+  }
+}
 
+.collection {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2rem;
+  &__item {
+    position: relative;
+    &:hover {
+      .collection__info {
+        opacity: 1;
+      }
+    }
+  }
 
+  &__images {
+    min-height: 22rem;
+    object-fit: cover;
+    @media screen and (max-width: 1366px) {
+      min-height: 16rem;
+    }
+  }
 
+  &__info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #ffff, $alpha: 0.6);
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+  }
+
+  &__info-title {
+    @extend %title-font;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: $blackClr;
+    position: relative;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    &::after {
+      content: "";
+      bottom: 0;
+      position: absolute;
+      background: $blackClr;
+      height: 1px;
+      width: 80%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+  &__info-text {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #707070;
+  }
+}
+
+.decor {
+  padding: 10.6rem 0 9.7rem;
+  background-image: url(../images/decorDb.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 37.5rem;
+  &__title {
+    max-width: 33.8rem;
+    @extend %title-font;
+    color: $blackClr;
+    font-size: 3.5rem;
+    line-height: 5rem;
+    position: relative;
+    padding-bottom: 1.3rem;
+    margin-bottom: 1.3rem;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 12rem;
+      background-color: #6d7278;
+      height: 1px;
+    }
+  }
+
+  &__text {
+    max-width: 33.8rem;
+    color: $blackClr;
+  }
+}
+
+.works-path {
+  padding: 5rem 0 2rem;
+  &__title {
+    @extend %title-font;
+    text-align: center;
+    color: $blackClr;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  
+  &__items-box {
+    display: flex;
+    border-bottom: 2px solid rgba($color: $blackClr, $alpha: 0.7);
+    position: relative;
+    align-items: flex-end;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0.8rem;
+      height: 0.8rem;
+      bottom: -0.45rem;
+      border-radius: 50%;
+      background-color: $blackClr;
+    }
+  }
+  &__item--produc {
+    margin-left: 20rem;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      height: 1.25rem;
+      background: rgba($color: $blackClr, $alpha: 0.7);
+    }
+  }
+  &__item--consult,
+  &__item--produc {
+    padding-bottom: 2rem;
+  }
+
+  &__item--measure {
+    padding-top: 2rem;
+    margin-left: 19rem;
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 1.25rem;
+      width: 2px;
+      background: rgba($color: $blackClr, $alpha: 0.7);
+    }
+  }
+
+  &__item {
+    width: 15.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__item-title {
+    @extend %title-font;
+    color: $blackClr;
+    margin-left: 0.8rem;
+  }
+
+  &__item-text {
+    font-size: 0.7rem;
+  }
+}
+
+.gallery {
+  padding: 5rem 0 5.6rem;
+
+  &__buttons {
+    text-align: center;
+  }
+
+  &__btn {
+    margin: 0 0.8rem;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid $btnClr;
+    border-radius: 1.25rem;
+    padding: 0.37rem 1rem;
+    font-size: 0.9rem;
+    color: $btnClr;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+  }
+  .mixitup-control-active {
+    background-color: yellow;
+    color: $blackClr;
+    border: 0.1rem solid $blackClr;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem 2rem;
+  }
+  &__item-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width: 1366px) {
+      max-height: 46rem;
+    }
+  }
+
+  &__item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.blog-box {
+  padding-bottom: 6.25rem;
+
+  &__title {
+    color: $blackClr;
+    @extend %title-font;
+    font-size: 2.2rem;
+    line-height: 3rem;
+    text-align: center;
+    margin: 0 auto 1.9rem;
+    max-width: 27rem;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.9rem;
+  }
+
+  &__img-link {
+    margin-bottom: 1.2rem;
+    display: inline-block;
+  }
+
+  &__links {
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+    color: #707070;
+    font-weight: 600;
+  }
+
+  &__author {
+    color: inherit;
+
+  }
+
+  &__theme {
+    color: inherit;
+  }
+
+  &__item-title {
+    @extend %title-font;
+    color: $blackClr;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+  }
+}
