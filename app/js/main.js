@@ -1,3 +1,12 @@
+$(function() {
+    $('.contact-slider').slick({
+        dots: true,
+        arrows: false,
+        slidesToShow: 10,
+        slidesToScroll: 10,
+        autoplay: true,
+    })
+})
 const headerBtn = document.getElementById('headerBtn')
 const rightsideMenu = document.getElementById('rightsideMenu')
 const rightMenuClose = document.getElementById('rightMenuClose')
@@ -19,3 +28,4 @@ const mixer = mixitup('.gallery__inner', {
 
     }
 });
+

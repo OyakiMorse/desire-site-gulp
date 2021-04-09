@@ -7,6 +7,9 @@ body {
   font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
   min-width: 320px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
@@ -19,7 +22,7 @@ body {
   flex: 1 0 auto;
 }
 .footer {
-  flex: 0 0 auto;
+  margin-top: auto;
 }
 
 .container {
@@ -31,8 +34,49 @@ body {
 .container-fluid {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 .6rem;
-  
+  padding: 0 0.6rem;
 }
 
- 
+.info-email {
+  font-weight: 600;
+  color: $blackClr;
+  display: inline-block;
+  padding-left: 1.5rem;
+  margin: 1.2rem 0 1.2rem 0;
+  position: relative;
+  &::before {
+    content: "";
+    background-image: url(../images/envelope.svg);
+    background-repeat: no-repeat;
+    left: 0;
+    margin-top: 0.5rem;
+    position: absolute;
+    width: 1rem;
+    height: 0.9rem;
+  }
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    background-color: $blackClr;
+    border: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 0;
+  }
+
+  li {
+    margin: 0 1rem;
+  }
+  li.slick-active {
+    button {
+      outline: none;
+      background-color: rgb(240, 240, 48);
+    }
+  }
+}
