@@ -19,6 +19,9 @@
     outline: none;
     width: 1.8rem;
   }
+  &__btn-menu {
+    display: none;
+  }
 }
 
 .logo {
@@ -175,9 +178,6 @@
   padding-top: 3rem;
   box-shadow: -3px 4px 8px -5px rgba(34, 60, 80, 0.2);
   transition: all 0.3s ease-in;
-  @media screen and (max-width: 1366px) {
-    padding: 1.12rem 0 4rem 0;
-  }
   overflow: hidden;
   &.rightside-menu--close {
     transform: translateX(150%);
@@ -227,26 +227,13 @@
   &__images {
     max-width: 100%;
     object-fit: cover;
-
-    @media screen and (max-width: 1366px) {
-      width: 100%;
-      height: 50vh;
-      object-fit: contain;
-    }
   }
 }
 
 .top {
-  hr {
-    width: 100%;
-    border: 1px solid $defaultClr;
-  }
   &__inner {
     padding-bottom: 4rem;
     position: relative;
-    @media screen and (max-width: 1366px) {
-      padding: 0 10rem 4rem 10rem;
-    }
     &::after {
       content: "";
       background-image: url(../images/mainBg.jpg);
@@ -256,9 +243,6 @@
       left: 0;
       z-index: -1;
       position: absolute;
-      @media screen and (max-width: 1366px) {
-        height: 34rem;
-      }
     }
   }
 
@@ -273,10 +257,6 @@
     max-width: 43rem;
     max-height: 50rem;
     object-fit: cover;
-    @media screen and (max-width: 1366px) {
-      margin-left: -5%;
-      width: 50%;
-    }
   }
 
   &__slider-info {
@@ -290,12 +270,13 @@
     font-size: 6.8rem;
     line-height: 8.4rem;
     padding-bottom: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.5rem;
     position: relative;
     &::after {
       content: "";
       position: absolute;
       left: 0;
+      height: 2px;
       width: 185px;
       background: $lineClr;
       bottom: 0;
@@ -354,9 +335,6 @@
   &__images {
     min-height: 22rem;
     object-fit: cover;
-    @media screen and (max-width: 1366px) {
-      min-height: 16rem;
-    }
   }
 
   &__info {
@@ -546,9 +524,6 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    @media screen and (max-width: 1366px) {
-      max-height: 46rem;
-    }
   }
 
   &__item:first-child {
@@ -620,11 +595,16 @@
   z-index: 100;
   &__list {
     display: flex;
+    overflow-x: auto;
+  }
+  &__item {
+    position: relative;
+    padding-right: 8px;
   }
 
   &__item::after {
     content: "/";
-    margin: 0 0.25rem;
+    position: absolute;
   }
   &__item:last-child::after {
     display: none;
@@ -787,6 +767,9 @@
 
 .map {
   margin-top: -3.31rem;
+  iframe {
+    height: 580px;
+  }
 }
 
 .contact {
@@ -917,7 +900,7 @@
     right: 0;
     bottom: 0;
     top: 0;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: absolute;
     background-color: rgba($color: #fff, $alpha: 0.7);
@@ -1330,3 +1313,4 @@
     font-size: 0.9rem;
   }
 }
+@import "media";
