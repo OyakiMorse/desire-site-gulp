@@ -40,7 +40,9 @@
                   </a>
                 </li>
                 <li class="menu__list-item">
-                  <a class="menu__list-link" href="contact.html">Contact</a>
+                  <a class="menu__list-link" href="contact.html"
+                    >Contact</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -88,11 +90,11 @@
           </div>
         </div>
 
-        <section class="blog">
+        <section class="blog blog-single">
           <div class="container">
             <div class="blog__inner">
               <div class="blog__items">
-                <div class="blog__item">
+                <div class="blog__item blog-single__item">
                   <img
                     class="blog__item-img"
                     src="images/img.jpg"
@@ -107,119 +109,114 @@
                     |
                     <a href="#" class="blog__item-theme"> Bedroom furniture </a>
                   </div>
-                </div>
-                <a href="#" class="blog__item-link">
-                  <h3 class="blog__item-title">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consequuntur, numquam?
-                  </h3>
-                </a>
-                <p class="blog__item-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio rerum tempora sapiente, nobis nulla dolores esse ad
-                  voluptatibus quod? Sed.
-                </p>
+                  <a href="#" class="blog__item-link">
+                    <h3 class="blog__item-title">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Consequuntur, numquam?
+                    </h3>
+                  </a>
+                  <div class="blog-single__text">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Distinctio rerum tempora sapiente, nobis nulla dolores
+                      esse ad voluptatibus quod? Sed. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Asperiores cum error, rem
+                      laborum sit iure.
+                    </p>
+                    <blockquote>
+                      " Lorem ipsum dolor sit amet consectetur, adipisicing
+                      elit. Adipisci, veritatis? "
+                      <div class="blog__blockquote-author">Paul Redminton</div>
+                    </blockquote>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nostrum officia id delectus soluta ducimus atque quasi
+                      explicabo aut laborum dolore laboriosam aliquam vel
+                      tempora veniam, consequatur ipsum beatae itaque animi.
+                    </p>
+                  </div>
+                  <div class="blog-single__tags">
+                    <h4 class="blog-single__tags-title">Tags</h4>
+                    <a class="blog-single__tags-link" href="#">
+                      Bedroom furniture
+                    </a>
+                    <a class="blog-single__tags-link" href="#">
+                      Office furniture
+                    </a>
+                    <a class="blog-single__tags-link" href="#">
+                      Dining room furniture
+                    </a>
+                    <a class="blog-single__tags-link" href="#">Chair</a>
+                  </div>
 
-                <blockquote class="blog__blockquote">
-                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Delectus minus sunt reiciendis."
-                  <div class="blog__blockquote-author">Paul Redminton</div>
-                </blockquote>
-
-                <div class="blog__item article-popup">
-                  <div class="article-popup__box">
-                    <img
-                      class="blog__item-img"
-                      src="./images/img.jpg"
-                      alt="blog img"
-                    />
+                  <div class="blog-single__links">
                     <a
-                      class="blog__item-popup"
-                      data-fancybox
-                      href="https://www.youtube.com/watch?v=n9PaAHqMNjI"
+                      class="blog-single__link blog-single__link-prev"
+                      href="#"
                     >
-                      <img
-                        src="./images/play_button.svg"
-                        alt="img btn"
-                        class="blog__item-play"
-                      />
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </a>
+                    <a
+                      class="blog-single__link blog-single__link-next"
+                      href="#"
+                    >
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Necessitatibus, perferendis!
                     </a>
                   </div>
-                  <div class="blog__item-info">
-                    <span class="blog__item-date"> Juny 22, 2021 </span>
-                    |
-                    <a href="#" class="blog__item-author"> by Max Luther </a>
-                    |
-                    <a href="#" class="blog__item-theme"> Bedroom furniture </a>
+                </div>
+                <div class="blog-single__comment">
+                  <h4 class="blog-single__comment-title">Comemnts:</h4>
+                  <div class="blog-single__comment-item">
+                    <img
+                      class="blog-single__comment-avatar"
+                      src="./images/avatar.jpg"
+                      alt="avatar"
+                    />
+                    <div class="blog-single__comment-info">
+                      <p class="blog-single__comment-name">Larisa Petrovna</p>
+                      <p class="blog-single__comment-date">July 23, 2020</p>
+                      <span class="blog-single__comment-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Commodi, accusantium! Lorem ipsum dolor, sit amet
+                        consectetur adipisicing elit. Est, quidem.
+                      </span>
+                    </div>
+                    <button class="blog-single__reply">Reply</button>
                   </div>
                 </div>
+                <form class="blog-single__form">
+                  <h4 class="blog-single__form-title">Comment post</h4>
+                  <textarea
+                    class="blog-single__form-area"
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Your comment"
+                  ></textarea>
+                  <input
+                    class="blog-single__form-input"
+                    type="text"
+                    placeholder="Your name"
+                  />
+                  <input
+                    class="blog-single__form-input"
+                    type="email"
+                    placeholder="Your email"
+                  />
 
-                <!-- <div class="blog__item article-slide">
-                  <div class="article-slide__box">
-                    <img
-                      class="article-slide__img"
-                      src="./images/blog1.jpg"
-                      alt="slide img"
+                  <label class="blog-single__form-label">
+                    <input
+                      class="blog-single__form-labelinput"
+                      type="checkbox"
                     />
-                    <img
-                      src="./images/blog2.jpg"
-                      class="article-slide__img"
-                      alt="slide img"
-                    />
-                    <img
-                      class="article-slide__img"
-                      src="./images/blog1.jpg"
-                      alt="slide img"
-                    />
-                  </div>
-                  <div class="blog__item-info">
-                    <span class="blog__item-date"> October 22, 2021 </span>
-                    |
-                    <a href="#" class="blog__item-author">
-                      by Anny per penny
-                    </a>
-                    |
-                    <a href="#" class="blog__item-theme"> Bedroom furniture </a>
-                  </div>
-                  <h3 class="blog__item-title">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consequuntur, numquam?
-                  </h3>
-                  <p class="blog__item-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Distinctio rerum tempora sapiente, nobis nulla dolores esse
-                    ad voluptatibus quod? Sed.
-                  </p>
-                </div> -->
-
-                <div class="pagination">
-                  <a
-                    href=""
-                    class="pagination__arrow pagination__arrow--disabled"
-                  >
-                    <img
-                      class="pagination__arrow-icon"
-                      src="./images/arrow-l.svg"
-                      alt="arrow left"
-                    />
-                  </a>
-
-                  <ul class="pagination__list">
-                    <li class="pagination__list-item">
-                      <a href="#" class="pagination__list-num">1 </a>
-                    </li>
-                    <li class="pagination__list-item">
-                      <a href="#" class="pagination__list-num">2 </a>
-                    </li>
-                  </ul>
-                  <a href="" class="pagination__arrow">
-                    <img
-                      class="pagination__arrow-icon"
-                      src="./images/arrow-r.svg"
-                      alt="#"
-                    />
-                  </a>
-                </div>
+                    Remember me
+                  </label>
+                  <button class="blog-single__form-btn" type="submit">
+                    Send
+                  </button>
+                </form>
               </div>
 
               <aside class="aside">

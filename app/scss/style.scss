@@ -868,6 +868,7 @@
     min-height: 7rem;
     margin-bottom: 1.3rem;
     line-height: 1rem;
+    resize: none;
     width: 100%;
     &::placeholder {
       color: $lightGray;
@@ -919,13 +920,413 @@
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    background-color: rgba($color: #fff, $alpha: .7);
+    background-color: rgba($color: #fff, $alpha: 0.7);
     color: $blackClr;
     line-height: 1.4rem;
     padding: 0 0.4rem;
     opacity: 0;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 
+.blog {
+  padding: 3.75rem 0 6.25rem;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
 
+  &__category {
+    margin-bottom: 2.2rem;
+  }
+
+  &__category-title,
+  &__tags-title {
+    @extend %title-font;
+    color: $blackClr;
+    margin-bottom: 1rem;
+    line-height: 1.4rem;
+  }
+
+  &__category-item {
+    margin-bottom: 0.8em;
+  }
+
+  &__category-link {
+    color: inherit;
+  }
+  &__tags-link {
+    color: $lightGray;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0 1rem;
+    margin: 0 0.6rem 0.6rem 0;
+    display: inline-block;
+    border: 1px solid $lightGray;
+    border-radius: 0.9rem;
+  }
+  &__social {
+    margin-top: 1rem;
+    display: flex;
+  }
+  &__social-item {
+    margin-right: 1.2rem;
+  }
+
+  &__item {
+    margin-bottom: 2rem;
+  }
+
+  &__item-img {
+    width: 100%;
+  }
+  &__item-info {
+    padding: 1.6rem 0 0.6rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $lightGray;
+    a {
+      color: inherit;
+    }
+  }
+
+  &__item-title {
+    @extend %title-font;
+    margin-bottom: 0.4rem;
+    font-size: 1.5rem;
+    color: $blackClr;
+    line-height: 2.3rem;
+  }
+
+  &__blockquote {
+    background: rgba($color: $lightGray, $alpha: 0.5);
+    padding: 3.12rem 4rem;
+    line-height: 2.3rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+    margin: 0.8rem 0 3.12rem 0;
+  }
+
+  &__blockquote-author {
+    @extend %title-font;
+    color: $blackClr;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    line-height: 1.37rem;
+    font-style: normal;
+    position: relative;
+    &::before {
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      position: absolute;
+      height: 1px;
+      width: 200px;
+      background-color: $blackClr;
+      margin: 0 auto;
+    }
+  }
+
+  &__item-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.article-popup {
+  &__box {
+    position: relative;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__arrow {
+    margin: 0 0.3rem;
+  }
+  &__arrow--disabled {
+    visibility: hidden;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__list-item {
+    margin: 0 0.3rem;
+  }
+
+  &__list-num {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $defaultClr;
+  }
+  &__list-num--active {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $defaultClr;
+  }
+}
+
+.aside {
+  width: 350px;
+  margin-left: 2rem;
+
+  &__search {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+
+  &__search-inp {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 2.2rem 0.4rem 1.1rem;
+    border: 1px solid rgba($color: $blackClr, $alpha: 0.7);
+    border-radius: 1.25rem;
+    &::placeholder {
+      font-size: 0.9rem;
+      line-height: 1.8rem;
+      color: $lightGray;
+    }
+  }
+
+  &__search-btn {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    position: absolute;
+    top: 0.7rem;
+    right: 0.8rem;
+  }
+}
+// TODO take out to global class
+
+.recent-posts {
+  margin-bottom: 2.5rem;
+
+  &__title {
+    @extend %title-font;
+    color: $blackClr;
+    margin-bottom: 1.4rem;
+    line-height: 1.4rem;
+  }
+
+  &__link {
+    display: block;
+    color: inherit;
+  }
+
+  &__date,
+  &__author {
+    color: $lightGray;
+  }
+}
+
+.blog-single__item {
+  p {
+    margin-bottom: 2.5rem;
+  }
+
+  blockquote {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.8rem;
+    color: $blackClr;
+    padding: 0 2.5rem;
+    margin-bottom: 1.9rem;
+  }
+  .blog__blockquote-author::before {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+.blog-single {
+  &__tags {
+    margin-bottom: 2rem;
+  }
+
+  &__tags-title {
+    color: $blackClr;
+    @extend %title-font;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__tags-link {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    margin-right: 1.3rem;
+    color: $blackClr;
+    line-height: 1.4rem;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.5;
+    border: 1px solid rgba($blackClr, 0.7);
+    border-radius: 0.9rem;
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 0 2rem;
+    border-top: 1px solid rgba($lightGray, 0.5);
+    border-bottom: 1px solid rgba($lightGray, 0.5);
+    align-items: center;
+  }
+
+  &__link {
+    width: 250px;
+    position: relative;
+    color: $lightGray;
+    font-weight: 600;
+    font-size: 0.9rem;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%);
+      background-image: url();
+      width: 0.8rem;
+      height: 1.4rem;
+    }
+  }
+
+  &__link-prev {
+    padding-left: 2.6rem;
+    &::before {
+      background-image: url(../images/arrow-l.svg);
+      left: 0;
+    }
+  }
+
+  &__link-next {
+    padding-right: 2.6rem;
+    &::before {
+      background-image: url(../images/arrow-r.svg);
+      right: 0;
+    }
+  }
+
+  &__comment {
+    margin-bottom: 2.1rem;
+  }
+
+  &__comment-title {
+    color: $blackClr;
+    @extend %title-font;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+  }
+
+  &__comment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 2.5rem;
+  }
+
+  &__comment-avatar {
+    width: 64px;
+    height: 64px;
+    border: 50%;
+    object-fit: cover;
+    margin-right: 0.9rem;
+  }
+
+  &__comment-name {
+    @extend %title-font;
+    line-height: 1.4rem;
+    color: $blackClr;
+  }
+
+  &__comment-date {
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: $lightGray;
+  }
+
+  &__reply {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $lightGray;
+    margin-left: 0.2rem;
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__form-title {
+    @extend %title-font;
+    margin-bottom: 1.5rem;
+    color: $blackClr;
+    line-height: 1.3rem;
+  }
+
+  &__form-input {
+    border: 1px solid $lineClr;
+    border-radius: 1.25rem;
+    padding: 0.4rem 0.8rem;
+    width: 48%;
+    margin-bottom: 1rem;
+    outline: none;
+
+    &::placeholder {
+      color: $lightGray;
+      font-size: 1rem;
+      line-height: 1.69rem;
+      font-weight: 400;
+    }
+  }
+  // TODO take out to global class
+
+  &__form-area {
+    outline: none;
+    border-radius: 1.25rem;
+    padding: 0.4rem 0.8rem;
+    min-height: 7rem;
+    margin-bottom: 1.5rem;
+    line-height: 1rem;
+    resize: none;
+    width: 100%;
+    &::placeholder {
+      color: $lightGray;
+      font-size: 1rem;
+      line-height: 1.69rem;
+      font-weight: 400;
+    }
+  }
+
+  &__form-btn {
+    background-color: $blackClr;
+    color: white;
+    border: none;
+    border-radius: 1.23rem;
+    padding: 0.37rem 0.75rem;
+    min-width: 10rem;
+    margin-left: 0.6rem;
+    cursor: pointer;
+  }
+
+  &__form-label {
+    width: 100%;
+    margin-bottom: 1.3rem;
+    font-size: 0.9rem;
+  }
+}
